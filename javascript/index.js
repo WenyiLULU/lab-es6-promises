@@ -79,6 +79,7 @@ obtainInstruction('steak', 0)
   .then( (step7) => {
     document.querySelector("#steak").innerHTML += `<li>${step7}</li>`
     document.querySelector("#steak").innerHTML += `<li>Stake is ready!</li>`
+    document.querySelector("#steakImg").removeAttribute("hidden");
   })
   .catch((err) => console.log(err));
 
@@ -103,7 +104,8 @@ const displayBroccoli = async() => {
     document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`
     const step7 = await makeBroccoli(6)
     document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`   
-    document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`   
+    document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
   } catch (error){
     console.log(error);
   }
@@ -152,7 +154,9 @@ const displayBrussels = async() => {
     document.querySelector("#brusselsSprouts").innerHTML += `<li>${step7}</li>` 
     const step8 = await makeBrussels(7)
     document.querySelector("#brusselsSprouts").innerHTML += `<li>${step8}</li>`    
-    document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels Sprouts is ready!</li>`   
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels Sprouts is ready!</li>`
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+
   } catch (error){
     console.log(error);
   }
