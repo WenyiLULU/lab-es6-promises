@@ -112,9 +112,8 @@ const displayBroccoli = async() => {
   }
 }
 displayBroccoli()*/
-
 // solution 2
-async function makeBroccoli() {
+/*async function makeBroccoli() {
   try{    
     const step1 = await obtainInstruction('broccoli', 0)
     document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`
@@ -133,6 +132,20 @@ async function makeBroccoli() {
     document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`
     document.querySelector("#broccoliImg").removeAttribute("hidden");
   } catch (error){
+    console.log(error);
+  }
+}
+makeBroccoli()*/
+// solution 3
+async function makeBroccoli(){
+  try{
+    for(let index = 0; index < broccoli.length; index+=1){
+      let step = await obtainInstruction('broccoli', index)
+      document.querySelector("#broccoli").innerHTML += `<li>${step}</li>`
+    }
+    document.querySelector("#broccoli").innerHTML += `<li>Broccoli is ready!</li>`
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
+  }catch (error){
     console.log(error);
   }
 }
@@ -161,7 +174,6 @@ let allSteps = [];
 for (let index = 0; index < brusselsSprouts.length; index+=1){
   allSteps.push(obtainInstruction('brusselsSprouts',index))
 }
-console.log(allSteps)
 Promise.all(allSteps)
 .then((steps) => {
   steps.forEach(step => {
