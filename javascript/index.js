@@ -25,8 +25,6 @@
     document.querySelector("#mashedPotatoesImg").removeAttribute("hidden");
   }, (error) => console.log(error));*/
 
-
-
 // Iteration 1 - using callbacks
 getInstruction("mashedPotatoes", 0, (step1) => {
   document.querySelector("#mashedPotatoes").innerHTML += `<li>${step1}</li>`;
@@ -113,7 +111,7 @@ const displayBroccoli = async() => {
 }
 displayBroccoli()*/
 // solution 2
-/*async function makeBroccoli() {
+async function makeBroccoli() {
   try{    
     const step1 = await obtainInstruction('broccoli', 0)
     document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`
@@ -135,9 +133,9 @@ displayBroccoli()*/
     console.log(error);
   }
 }
-makeBroccoli()*/
-// solution 3
-async function makeBroccoli(){
+makeBroccoli()
+// solution 3 (avoid to do like this)
+/*async function makeBroccoli(){
   try{
     for(let index = 0; index < broccoli.length; index+=1){
       let step = await obtainInstruction('broccoli', index)
@@ -149,7 +147,7 @@ async function makeBroccoli(){
     console.log(error);
   }
 }
-makeBroccoli()
+makeBroccoli()*/
 
 // Bonus 2 - Promise all
 // solution 1
